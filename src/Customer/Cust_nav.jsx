@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router'
 import logo from '../static/images/logo.webp'
 import { Link } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 const Cust_nav = () => {
-
+  const nav=useNavigate()
   const cust_status= useSelector(state=>state.Cust_status)
   const vendor_status= useSelector(state=>state.Vendor_status)
   console.log(cust_status)
@@ -14,6 +14,7 @@ const Cust_nav = () => {
             <h1 className='bg-dark text-white' >
                 <center><b>REAL ESTATE</b></center>
             </h1>
+      <center></button onClick={()=>{nav('/')}}>Login<button></button></div>
        {vendor_status?
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
